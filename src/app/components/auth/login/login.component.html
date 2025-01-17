@@ -1,0 +1,66 @@
+<div class="flex justify-center items-center h-screen bg-gray-100">
+    <div class="w-full max-w-sm bg-white p-8 rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold text-center mb-6">Login</h2>
+      <form (ngSubmit)="login()">
+        <div class="mb-4">
+          <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+          <input 
+            type="email" 
+            id="email"
+            [(ngModel)]="credentials.email" 
+            name="email" 
+            required
+            email
+            #email="ngModel"
+            class="w-full p-3 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          />
+          
+          <div *ngIf="email.invalid && email.touched" class="text-red-500 text-sm">
+            <div *ngIf="email.errors?.['required']">Email is required.</div>
+            <div *ngIf="email.errors?.['email']">Please enter a valid email.</div>
+          </div>
+        </div>
+  
+        <div class="mb-6">
+          <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+          <input 
+            type="password" 
+            id="password"
+            [(ngModel)]="credentials.password"  
+            name="password" 
+            required
+            #password="ngModel"
+            class="w-full p-3 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          />
+         
+          <div *ngIf="password.invalid && password.touched" class="text-red-500 text-sm">
+            <div *ngIf="password.errors?.['required']">Password is required.</div>
+          </div>
+        </div>
+  
+      
+        <div *ngIf="message" class="text-center text-red-500 text-sm mt-2">
+          {{ message }}
+        </div>
+  
+        <div class="flex justify-between items-center mb-6">
+          <span class="text-sm text-gray-600">New User?</span>
+          <a 
+            routerLink="/register"
+            class="text-sm text-blue-500 cursor-pointer hover:underline">
+            Register now
+          </a>
+        </div>
+  
+        <div class="flex justify-center">
+          <button 
+            type="submit" 
+            class="w-full py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-200"
+            [disabled]="email.invalid || password.invalid"> <!-- Disable button if form is invalid -->
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

@@ -1,0 +1,66 @@
+<div *ngIf="video" class="w-full h-screen bg-black text-white flex items-center justify-center">
+  <div class="w-full max-w-5xl px-6 py-8">
+    <a
+      routerLink="/" 
+      class="text-white mb-6 text-lg flex items-center space-x-2 hover:text-netflix-red"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+      </svg>
+      <span>Back</span>
+    </a>
+
+    <h1 class="text-4xl font-semibold text-netflix-red mb-6 text-center">
+      {{ video.title }}
+    </h1>
+    
+    <p class="text-lg text-gray-300 mb-6 text-center">{{ video.description }}</p>
+  
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="flex flex-col space-y-4">
+        <p class="text-sm text-gray-300"><strong>Director:</strong> {{ video.director || 'N/A' }}</p>
+        <p class="text-sm text-gray-300"><strong>Country:</strong> {{ video.country || 'N/A' }}</p>
+        <p class="text-sm text-gray-300"><strong>Release Year:</strong> {{ video.release_year || 'N/A' }}</p>
+        <p class="text-sm text-gray-300"><strong>Duration:</strong> {{ video.duration || 'N/A' }}</p>
+      </div>
+  
+      <div class="flex flex-col space-y-4">
+        <p class="text-sm text-gray-300"><strong>Added On:</strong> {{ video?.date_added | date: 'dd-MMM-yy' }}</p>
+        <p class="text-sm text-gray-300"><strong>Rating:</strong> {{ video.rating || 'N/A' }}</p>
+        <p class="text-sm text-gray-300"><strong>Listed In:</strong> {{ video.listed_in || 'N/A' }}</p>
+      </div>
+    </div>
+  
+    <div *ngIf="video.cast" class="mt-8">
+      <h3 class="text-xl font-semibold text-netflix-red mb-2">Cast:</h3>
+      <p class="text-md text-gray-300">{{ video.cast }}</p>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!video" class="w-full h-screen bg-black flex items-center justify-center">
+  <div class="w-full max-w-5xl px-6 py-8">
+    <div class="h-8 bg-gray-700 animate-pulse rounded mb-6"></div>
+    
+    <div class="h-6 bg-gray-700 animate-pulse rounded mb-6"></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="flex flex-col space-y-4">
+        <div class="h-4 bg-gray-700 animate-pulse rounded"></div>
+        <div class="h-4 bg-gray-700 animate-pulse rounded"></div>
+        <div class="h-4 bg-gray-700 animate-pulse rounded"></div>
+        <div class="h-4 bg-gray-700 animate-pulse rounded"></div>
+      </div>
+  
+      <div class="flex flex-col space-y-4">
+        <div class="h-4 bg-gray-700 animate-pulse rounded"></div>
+        <div class="h-4 bg-gray-700 animate-pulse rounded"></div>
+        <div class="h-4 bg-gray-700 animate-pulse rounded"></div>
+      </div>
+    </div>
+  
+    <!-- Cast Shimmer -->
+    <div class="mt-8">
+      <div class="h-4 bg-gray-700 animate-pulse rounded"></div>
+    </div>
+  </div>
+</div>
