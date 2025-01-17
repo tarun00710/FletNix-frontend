@@ -1,59 +1,93 @@
-# AngularApp
+# FletNix Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.7.
+FletNix is a Netflix-inspired movie and TV show browsing application built using Angular 12+ with standalone components. This repository contains the frontend codebase for FletNix.
 
-## Development server
+## Live Demo
 
-To start a local development server, run:
+Check out the live version of FletNix here: [FletNix Live](https://fletnix-v.netlify.app/)
+
+
+## Features
+- User authentication (Login/Register)
+- Age Restriction ( No 'R' rated content for age less than 18 ) 
+- Filter movies and shows by type (Movies, TV Shows)
+- Search by title or cast
+- Responsive UI with Netflix-inspired styling with tailwind css
+- Paginated List for smooth navigation
+- Detail Page for more info.
+- Shimmer UI for loading state and good user experience
+
+## Prerequisites
+
+Ensure you have the following installed on your system:
+
+- [Node.js](https://nodejs.org/) (version 14 or higher)
+- [npm](https://www.npmjs.com/) (comes with Node.js)
+- [Angular CLI](https://angular.io/cli) (version 12 or higher)
+- A code editor like [Visual Studio Code](https://code.visualstudio.com/)
+
+## Getting Started
+
+### 1. Clone the Repository
+
+```bash
+# Clone using SSH
+git clone git@github.com:tarun00710/FletNix-frontend.git
+
+# Navigate to the project directory
+cd FletNix-frontend
+```
+
+### 2. Install Dependencies
+
+Run the following command to install all required dependencies:
+
+```bash
+npm install
+```
+
+### 4. Run the Application
+
+Start the Angular development server:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+The app will be available at [http://localhost:4200](http://localhost:4200).
 
-## Code scaffolding
+### 5. Build the Application
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+To create a production build, run:
 
 ```bash
-ng generate --help
+ng build --prod
 ```
 
-## Building
+The build artifacts will be stored in the `dist/` directory.
 
-To build the project run:
+## Folder Structure
 
-```bash
-ng build
+```
+FletNix/
+├── src/
+│   ├── app/
+│   │   ├── components/
+│   │   ├── services/
+│   │   └── guards/
+│   └── index.html
+├── angular.json
+├── package.json
+├── README.md
+└── tsconfig.json
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-## Running unit tests
+## Acknowledgements
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+- Built with ❤️ using Angular
+- Inspired by Netflix's UI
 
-```bash
-ng test
-```
+## Contact
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+For any queries, reach out to **Tarun** at [tarun00710](https://github.com/tarun00710).
