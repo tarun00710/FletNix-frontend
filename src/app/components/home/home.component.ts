@@ -5,6 +5,7 @@ import { VideoService } from '../../services/videos/videos.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, Subject } from 'rxjs';
+import { AuthService } from '../../services/auth/auth.service';
 
 
 @Component({
@@ -24,7 +25,7 @@ export class HomeComponent implements OnInit {
   isLoading: boolean = false;
   private searchSubject: Subject<string> = new Subject<string>(); // Debounce Subject
 
-  constructor(private videoService: VideoService, private router: Router) {}
+  constructor(private videoService: VideoService,private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadVideos();
@@ -93,7 +94,11 @@ export class HomeComponent implements OnInit {
     this.loadVideos();
   }
   onSearchInputChange(query: string): void {
-    this.searchSubject.next(query); // Push input value to the Subject
+    this.searchSubject.next(query); 
+  }
+  logout(): void {
+    this.authService.logout();
+    this.router.navigate(['/login']); 
   }
   
 }

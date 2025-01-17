@@ -10,29 +10,29 @@
       <span>Back</span>
     </a>
 
-    <h1 class="text-4xl font-semibold text-netflix-red mb-6 text-center">
+    <h1 class="text-4xl font-semibold text-white mb-6 text-center">
       {{ video.title }}
     </h1>
     
-    <p class="text-lg text-gray-300 mb-6 text-center">{{ video.description }}</p>
+    <p class="text-lg font-semibold text-gray-300 mb-6 text-center">{{ video.description }}</p>
   
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div class="flex flex-col space-y-4">
-        <p class="text-sm text-gray-300"><strong>Director:</strong> {{ video.director || 'N/A' }}</p>
-        <p class="text-sm text-gray-300"><strong>Country:</strong> {{ video.country || 'N/A' }}</p>
-        <p class="text-sm text-gray-300"><strong>Release Year:</strong> {{ video.release_year || 'N/A' }}</p>
-        <p class="text-sm text-gray-300"><strong>Duration:</strong> {{ video.duration || 'N/A' }}</p>
+        <p class="text-md text-gray-300"><strong>Director:</strong> {{ video.director || 'N/A' }}</p>
+        <p class="text-md text-gray-300"><strong>Country:</strong> {{ video.country || 'N/A' }}</p>
+        <p class="text-md text-gray-300"><strong>Release Year:</strong> {{ video.release_year || 'N/A' }}</p>
+        <p class="text-md text-gray-300"><strong>Duration:</strong> {{ video.duration || 'N/A' }}</p>
       </div>
   
       <div class="flex flex-col space-y-4">
-        <p class="text-sm text-gray-300"><strong>Added On:</strong> {{ video?.date_added | date: 'dd-MMM-yy' }}</p>
-        <p class="text-sm text-gray-300"><strong>Rating:</strong> {{ video.rating || 'N/A' }}</p>
-        <p class="text-sm text-gray-300"><strong>Listed In:</strong> {{ video.listed_in || 'N/A' }}</p>
+        <p class="text-md text-gray-300"><strong>Added On:</strong> {{ video?.date_added | date: 'dd-MMM-yy' }}</p>
+        <p class="text-md text-gray-300"><strong>Rating:</strong> {{ video.rating || 'N/A' }}</p>
+        <p class="text-md text-gray-300"><strong>Listed In:</strong> {{ video.listed_in || 'N/A' }}</p>
       </div>
     </div>
   
     <div *ngIf="video.cast" class="mt-8">
-      <h3 class="text-xl font-semibold text-netflix-red mb-2">Cast:</h3>
+      <h3 class="text-xl font-semibold text-gray-200 mb-2">Cast:</h3>
       <p class="text-md text-gray-300">{{ video.cast }}</p>
     </div>
   </div>
