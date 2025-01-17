@@ -90,4 +90,4 @@ FletNix/
 
 ## Contact
 
-For any queries, reach out to **Tarun** at [tarun00710](https://github.com/tarun00710).
+For any queries, reach out to **Tarun** (me) at [tarun00710](https://github.com/tarun00710).
